@@ -1,3 +1,6 @@
+"""
+SETTINGS
+"""
 import os
 from pathlib import Path
 
@@ -7,9 +10,9 @@ load_dotenv()
 
 PROJECT_DIR = Path(__file__).resolve().parent
 
-SECRET_KEY = "django-insecure-$^tmpl8k*_07yyvpo7k^r2=wlu87hd@*@!)c6kdr&lz5vm7djb"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
-DEBUG = True
+DEBUG = os.getenv("DEBUG")
 
 ALLOWED_HOSTS: list[str] = ["localhost"]
 
@@ -61,20 +64,13 @@ WSGI_APPLICATION = "app.wsgi.application"
 # }
 
 DATABASES = {
-    'default': {
-
-        'ENGINE': os.getenv('DATABASE_ENGINE'),
-
-        'NAME': os.getenv('DATABASE_NAME'),
-
-        'USER': os.getenv('DATABASE_USER'),
-
-        'PASSWORD': os.getenv('DATABASE_PASS'),
-
-        'HOST': os.getenv('DATABASE_HOST'),
-
-        'PORT': os.getenv('DATABASE_PORT'),
-
+    "default": {
+        "ENGINE": os.getenv("DATABASE_ENGINE"),
+        "NAME": os.getenv("DATABASE_NAME"),
+        "USER": os.getenv("DATABASE_USER"),
+        "PASSWORD": os.getenv("DATABASE_PASS"),
+        "HOST": os.getenv("DATABASE_HOST"),
+        "PORT": os.getenv("DATABASE_PORT"),
     }
 }
 
@@ -95,7 +91,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "fr"
 
-TIME_ZONE = 'Europe/Paris'
+TIME_ZONE = "Europe/Paris"
 
 USE_I18N = True
 
