@@ -1,0 +1,9 @@
+.idea
+.vscode
+
+venv
+.venv
+
+src/app/staticfiles/*
+
+src/app/db.sqlite3
