@@ -5,5 +5,6 @@ venv
 .venv
 
 src/app/staticfiles/*
+src/app/media/*
 
 src/app/db.sqlite3
