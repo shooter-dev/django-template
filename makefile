@@ -36,6 +36,11 @@ analyse:
 	${PYTHON} -m pycodestyle --max-line-length=120 ./src
 
 
+code:
+	make fix
+	make analyse
+
+
 clean:
 	rm -rf __pycache__
 	rm -rf .pytest_cache
